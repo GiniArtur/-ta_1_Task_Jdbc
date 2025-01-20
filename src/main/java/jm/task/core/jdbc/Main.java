@@ -1,6 +1,5 @@
 package jm.task.core.jdbc;
 
-import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 import jm.task.core.jdbc.util.Util;
@@ -8,12 +7,9 @@ import jm.task.core.jdbc.util.Util;
 import java.sql.*;
 
 public class Main {
-
-
     public static void main(String[] args) {
         Util util = new Util();
         UserService userService = new UserServiceImpl();
-
         try (Connection connection = util.getConnection()) {
             System.out.println("Create table");
             userService.createUsersTable();
@@ -27,10 +23,8 @@ public class Main {
             userService.cleanUsersTable();
             System.out.println("Drop table");
             userService.dropUsersTable();
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 }

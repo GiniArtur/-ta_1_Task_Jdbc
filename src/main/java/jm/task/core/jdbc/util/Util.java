@@ -3,7 +3,7 @@ package jm.task.core.jdbc.util;
 import java.sql.*;
 
 public class Util {
-    // реализуйте настройку соеденения с БД
+    // Connection with DB
 
     private static final String DB_Driver = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/mydb_jdbc";
@@ -15,7 +15,6 @@ public class Util {
         try {
             Class.forName(DB_Driver);
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
-
         } catch (ClassNotFoundException e) {
             System.out.println("Connected to database failed");
             throw new RuntimeException(e);
@@ -25,7 +24,6 @@ public class Util {
         }
         return connection;
     }
-
 }
 
 
