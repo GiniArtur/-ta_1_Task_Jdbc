@@ -17,55 +17,27 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void dropUsersTable() {
-        try (Connection connection = Util.getConnection()) {
-            userDao.dropUsersTable();
-            System.out.println("User table dropped");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        userDao.dropUsersTable();
     }
 
     @Override
     public void saveUser(String name, String lastName, byte age) {
-        try (Connection connection = Util.getConnection()) {
-            userDao.saveUser(name, lastName, age);
-            System.out.println("Save new user - " + name);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        userDao.saveUser(name, lastName, age);
     }
 
     @Override
     public void removeUserById(long id) {
-        try (Connection connection = Util.getConnection()) {
-            userDao.removeUserById(id);
-            System.out.println("Remove user " + id);
-        } catch (
-                SQLException e) {
-            e.printStackTrace();
-        }
+        userDao.removeUserById(id);
     }
 
     @Override
     public List<User> getAllUsers() {
-        List<User> users = List.of();
-        try (Connection connection = Util.getConnection()) {
-            System.out.println("table user IS exists");
-            users = userDao.getAllUsers();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return users;
+        return userDao.getAllUsers();
     }
 
     @Override
     public void cleanUsersTable() {
-        try (Connection connection = Util.getConnection()) {
-            userDao.cleanUsersTable();
-            System.out.println("User table cleaned");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        userDao.cleanUsersTable();
     }
 }
 
