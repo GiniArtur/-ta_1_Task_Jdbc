@@ -25,8 +25,8 @@ public class Main {
         userService.saveUser(user5.getName(), user5.getLastName(), user5.getAge());
         System.out.println("Get all users ");
         System.out.println(userService.getAllUsers());
-//        userService.cleanUsersTable();
-//        userService.dropUsersTable();
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }
 
