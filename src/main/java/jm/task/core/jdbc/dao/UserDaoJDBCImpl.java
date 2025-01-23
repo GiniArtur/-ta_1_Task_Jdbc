@@ -86,7 +86,7 @@ public class UserDaoJDBCImpl implements UserDao {
         String sql = "DELETE FROM user";
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate(sql);
-            System.out.println("Удалена таблица user");
+            System.out.println("Очищена таблица user");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
